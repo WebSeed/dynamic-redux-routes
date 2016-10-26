@@ -1,20 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { clickButton } from '../actions'
+import Dumb from './Dumb'
 
-const App = ({ dispatch }) => {
-
-  console.log('Creating the app...')
-  console.log(dispatch)
-
-  return (
-    <div>
-      This is the app!
-    </div>
-  )
-}
-
-const mapStateToProps = (state) => ({
-  hello: 'world!'
+const mapStateToProps = ({ toggled }) => ({
+  toggled
 })
 
-export default connect(mapStateToProps)(App)
+// const mapDispatchToProps = (dispatch) => ({
+//   onClick: () => {
+//     dispatch(clickButton())
+//   }
+// })
+
+const mapDispatchToProps = {
+  onClick: clickButton
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dumb)
