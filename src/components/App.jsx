@@ -1,9 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const App = () => (
-  <div>
-    This is the app!
-  </div>
-)
+const App = ({ dispatch }) => {
 
-export default App
+  console.log('Creating the app...')
+  console.log(dispatch)
+
+  return (
+    <div>
+      This is the app!
+    </div>
+  )
+}
+
+const mapStateToProps = (state) => ({
+  hello: 'world!'
+})
+
+export default connect(mapStateToProps)(App)
