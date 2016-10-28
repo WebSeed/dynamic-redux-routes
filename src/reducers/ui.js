@@ -1,5 +1,4 @@
 function reducer (state = { enableButton: true, message: 'Press me!' }, action) {
-  console.log('STATE', state)
   switch (action.type) {
     case 'REQUEST_GET_THING':
       return { ...state, enableButton: false, message: 'Getting thing...' }
