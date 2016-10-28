@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import { clickButton } from '../actions'
 import Dumb from './Dumb'
 
-const mapStateToProps = ({ toggled }) => ({
-  toggled
+const mapStateToProps = ({ ui }) => ({
+  enableButton: ui.enableButton,
+  message: ui.message
 })
 
 // const mapDispatchToProps = (dispatch) => ({

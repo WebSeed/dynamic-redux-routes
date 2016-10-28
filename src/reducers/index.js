@@ -1,10 +1,7 @@
-const reducer = (state = { toggled: false }, action) => {
-  switch (action.type) {
-    case 'CLICK_BUTTON':
-      return Object.assign({}, state, { toggled: !state.toggled })
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux'
+import ui from './ui'
+import data from './data'
 
-export default reducer
+const rootReducer = combineReducers({ ui, data })
+
+export default rootReducer

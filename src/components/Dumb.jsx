@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 
-const Dumb = ({ toggled, onClick }) => (
-  <button onClick={() => onClick()}>
-    Toggled {toggled ? 'ON' : 'OFF'}
+const Dumb = ({ enableButton, message, onClick }) => (
+  <button onClick={() => onClick()} disabled={!enableButton}>
+    {message}
   </button>
 )
 
